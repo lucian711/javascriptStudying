@@ -30,7 +30,7 @@ type Person = {
   age: number
 }
 
-// 기존 타입을 사용하여 새로운 타입 정의
+// 인터셉션 타입
 type Employee = Person & { jobTitle: string }
 
 // 함수의 타입 정의
@@ -105,3 +105,32 @@ type PhoneNumbers = Record<string, string> // { [key: string]: string; }
 
 // 코드 품질 및 스타일 규칙을 프로덕션 환경에서 강제하여 안정성을 확보합니다.
 // 일반적으로 프로젝트에서는 ESLint와 Prettier를 함께 사용하여 코드 품질과 스타일을 효과적으로 관리합니다.
+
+//TEST
+// Generic
+// 함수에 제너릭을 할당함으로써 타입을 추후의 설정할수있게 하는것
+
+//유틸리티 타입은 무엇인가
+// 유틸리티 타입은 총 8가지가 있으며
+// Partial 요소를 옵셔널하게 만들어줌
+// Required 요소를 필수로 만들어줌
+// Readonly 읽기전용으로 만들어줌
+// Record 키와 밸류를 받아서 객체로 만들어줌
+// Pick 특정 요소만 뽑아서 만들어줌
+// Omit 특정 요소만 제거해줌
+// Exclude 특정 요소만 제거해줌
+// Extract 특정 요소만 추출해줌
+
+// 리액트의 훅으로는 useState, useEffect, useMemo, useCallback, useReducer 등등이 있습니다.
+// react의 훅에서 useState는 값을 저장하고 값이 변경되었을시에 리렌더링을 해주는 훅입니다.
+// useEffect는 컴포넌트가 렌더링 될때마다 특정 작업을 수행하도록 설정하는 훅입니다.
+// useMemo는 특정 값이 바뀌었을때만 연산을 실행하고, 값이 바뀌지 않았다면 이전에 연산했던 결과를 다시 사용하는 훅이다.
+// useCallback은 함수를 캐싱하는 훅이다.
+
+// 리액트에서의 리렌더링을 최적화 할수있는 방법
+// 1. shouldComponentUpdate 라이프사이클을 사용하여 리렌더링을 막을수있다.
+// 2. React.memo를 사용하여 컴포넌트를 감싸서 props가 변경되었을때만 리렌더링을 하도록 설정할수있다.
+// 3. useMemo를 사용하여 연산된 값을 재사용할수있다.
+// 4. useCallback을 사용하여 함수를 캐싱할수있다.
+// 5. React.lazy와 Suspense를 사용하여 컴포넌트를 비동기적으로 불러올수있다.
+// 6. useState에서 불변성 데이터를 사용하여 리렌더링을 방지할수있습니다.
